@@ -2,7 +2,7 @@
 	import { Drawer, Button } from 'flowbite-svelte';
 	import { sineIn } from 'svelte/easing';
 
-	export let placement: 'left' | 'right' = 'left';
+	export let placement: 'left' | 'right';
 
 	let activateClickOutside = false;
 	let backdrop = false;
@@ -13,7 +13,22 @@
 		easing: sineIn
 	};
 
-	$: iconPosition = hidden ? `${placement}-0` : `${placement}-80`;
+	let iconPositions: {
+		default: string;
+		hidden: string;
+	};
+	$: iconPositions =
+		placement === 'left'
+			? {
+					default: 'left-80',
+					hidden: 'left-0'
+			  }
+			: {
+					default: 'right-80',
+					hidden: 'right-0'
+			  };
+
+	$: iconPosition = hidden ? iconPositions.hidden : iconPositions.default;
 </script>
 
 <Button
