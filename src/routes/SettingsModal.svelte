@@ -8,6 +8,7 @@
 		<div class="w-full">{$theme === 'dark' ? 'Light' : 'Dark'} Mode</div>
 		<DarkMode class="text-lg">
 			<svelte:fragment slot="lightIcon">
+				<!-- TODO: Fire the click event when the fragment is clicked not when the icon is clicked -->
 				<svg
 					on:click={() => theme.set('light')}
 					on:keydown={() => theme.set('light')}
