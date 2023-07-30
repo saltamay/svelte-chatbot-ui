@@ -1,11 +1,7 @@
 <script>
-	import { A, Button, DarkMode, Input, Label } from 'flowbite-svelte';
+	import { Button, Input, Label } from 'flowbite-svelte';
 	import { Sidebar, SidebarGroup } from 'flowbite-svelte';
 	import NoData from './NoData.svelte';
-
-	// TODO: Move this to left sidebar settings
-	// let btnClass =
-	// 	'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
 </script>
 
 <Sidebar class="flex flex-col w-full h-full">
@@ -63,8 +59,6 @@
 	<NoData />
 
 	<SidebarGroup ulClass="flex justify-end px-4 py-2">
-		<!-- TODO: Move this to left sidebar settings -->
-		<!-- <DarkMode {btnClass} /> -->
 		<Button href="https://github.com/saltamay" color="light" class="focus:ring-0 border-0 p-2">
 			<svg
 				class="w-4 h-4 text-gray-800 dark:text-white"

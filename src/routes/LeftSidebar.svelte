@@ -1,7 +1,12 @@
 <script>
+	import { openSettings } from '$lib/stores';
 	import { Button, Input, Label } from 'flowbite-svelte';
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+	import { Sidebar, SidebarGroup } from 'flowbite-svelte';
 	import NoData from './NoData.svelte';
+
+	function openSettingsModal() {
+		openSettings.set(true);
+	}
 </script>
 
 <Sidebar class="flex flex-col w-full h-full">
@@ -99,7 +104,7 @@
 				<span>Export Data</span>
 			</div>
 		</Button>
-		<Button color="light" class="border-none focus:ring-0">
+		<Button color="light" class="border-none focus:ring-0" on:click={openSettingsModal}>
 			<div class="flex w-full items-center text-left gap-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
